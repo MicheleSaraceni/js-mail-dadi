@@ -38,6 +38,7 @@ const user = [
     'Luca@gmail.com'
   ];
 
+//chiedo la mail all'utente
 const usermail = prompt ("Inserisci la tua mail");
 console.log(usermail);
 
@@ -55,5 +56,27 @@ for (let i = 0; i < user.length; i++){
 /*Gioco dei dadi
 Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
 Stabilire il vincitore, in base a chi fa il punteggio più alto.*/
+
+// Funzione per generare un numero random da 1 a 6
+function d6() {
+    return Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+}
+
+// Tiro 1d6 per l'utente e uno per il computer
+let userRoll = d6();
+let computerRoll = d6();
+
+// Mostro i tiri effettuati dai 2 giocatori
+console.log("Giocatore ha tirato: " + userRoll);
+console.log("Computer ha tirato: " + computerRoll);
+
+// Verifico chi ha vinto
+if (userRoll > computerRoll) {
+    console.log("Congratulazioni! Hai vinto!");
+} else if (computerRoll > userRoll) {
+    console.log("Mi dispiace! Il computer ha vinto!");
+} else {
+    console.log("Cavolo, è un pareggio! Dovrete rigiocare!");
+}
 
 
