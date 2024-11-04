@@ -27,19 +27,30 @@ controlla che sia nella lista di chi può accedere,
 stampa un messaggio appropriato sull’esito del controllo.
 Non è necessario provvedere alla validazione delle email */
 
-//array di utenti che possono accedere (@gmail.com --> inserisco in seguito)
+//array di utenti che possono accedere
 const user = [
-    'Aj',
-    'Agostino',
-    'Alessandro',
-    'Michele',
-    'Carlo',
-    'Simone',
-    'Luca'
+    'Aj@gmail.com',
+    'Agostino@gmail.com',
+    'Alessandro@gmail.com',
+    'Michele@gmail.com',
+    'Carlo@gmail.com',
+    'Simone@gmail.com',
+    'Luca@gmail.com'
   ];
 
 const usermail = prompt ("Inserisci la tua mail");
 console.log(usermail);
+
+//scorro l'array
+for (let i = 0; i < user.length; i++){
+    //Controllo se la mail inserita è presente
+    if (user[i] === usermail){
+        console.log ("La mail è registrata, accesso effettuato correttamente.");
+        i = user.length;
+    } else if(user[user.length - 1] !== usermail){ //se arrivati all'ultimo indice della lista la mail non è presente comunicalo
+        console.log ("La mail " + usermail + " non è registrata, controlla se è stata inserita correttamente altrimenti se non hai ancora un account effettua la registrazione e tenta di nuovo l'accesso.");
+    }
+}
 
 /*Gioco dei dadi
 Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
