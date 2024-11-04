@@ -42,9 +42,26 @@ if (scelta === 1){
         'Luca@gmail.com'
     ];
 
-    //chiedo la mail all'utente
-    const usermail = prompt ("Inserisci la tua mail");
-    console.log(usermail);
+    //inizializzo le var
+    let usermail = " ";
+    let tentativi = 0;
+
+    while (tentativi < 10) {
+        //chiedo la mail all'utente
+        usermail = prompt ("Inserisci la tua mail:");
+        console.log("La mail inserita è: " + usermail);
+        //controllo se l'utente a inserito il carattere obbligatorio per una mail @
+        if (usermail.includes("@")) {
+            break;
+        } else {
+            console.log("Email non valida perchè priva del carattere '@', riprova.");
+            tentativi++;
+        }
+        //solo per utenti duri di comprendonio 
+        if (tentativi === 10) {
+            console.log("Mi dispiace ma se ancora dopo 10 volte non hai inserito una mail corretta non puoi accedere al sito, CIAO.");
+        }
+    }
 
     //scorro l'array
     for (let i = 0; i < user.length; i++){
