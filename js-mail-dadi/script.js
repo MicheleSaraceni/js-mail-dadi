@@ -27,7 +27,19 @@ controlla che sia nella lista di chi può accedere,
 stampa un messaggio appropriato sull’esito del controllo.
 Non è necessario provvedere alla validazione delle email */
 
+//array di utenti che possono accedere (@gmail.com --> inserisco in seguito)
+const user = [
+    'Aj',
+    'Agostino',
+    'Alessandro',
+    'Michele',
+    'Carlo',
+    'Simone',
+    'Luca'
+  ];
 
+const usermail = prompt ("Inserisci la tua mail");
+console.log(usermail);
 
 /*Gioco dei dadi
 Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
